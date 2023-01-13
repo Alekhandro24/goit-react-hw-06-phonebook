@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 export const ListItem = styled.li`
   font-size: 18px;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 `;
 
 export const Button = styled.button`
