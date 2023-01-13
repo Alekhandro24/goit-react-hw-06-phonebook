@@ -2,7 +2,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getContacts } from 'redux/selectors';
 import { setNameFilter } from 'redux/filtersSlice';
 import { FilterName } from 'components/Filter/Filter.styled';
-import PropTypes from 'prop-types';
 
 const Filter = () => {
   const contacts = useSelector(getContacts);
@@ -30,7 +29,3 @@ const Filter = () => {
 };
 
 export default Filter;
-
-Filter.propTypes = {
-  filter: PropTypes.string.isRequired,
-};
