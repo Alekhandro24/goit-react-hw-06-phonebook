@@ -6,7 +6,7 @@ import {
   FormBtn,
 } from 'components/ContactForm/ContactForm.styled';
 import { getContacts } from 'redux/selectors';
-import { addContacts } from 'redux/contactsSlice';
+import { addContact } from 'redux/contactsSlice';
 import PropTypes from 'prop-types';
 
 const ContactForm = () => {
@@ -14,9 +14,7 @@ const ContactForm = () => {
   const dispatch = useDispatch();
 
   const nameIsInContacts = newName =>
-    contacts.some(
-      ({ name }) => name.trim().toLowerCase() === newName.trim().toLowerCase()
-    );
+    contacts.some(({ name }) => name.toLowerCase() === newName.toLowerCase());
 
   const handleFormSubmit = e => {
     e.preventDefault();
@@ -28,9 +26,11 @@ const ContactForm = () => {
 
     if (isItInContacts) {
       alert(`"${name} exist in contact list"`);
+      form.reset();
+      return;
     }
 
-    dispatch(addContacts(name, number));
+    dispatch(addContact(name, number));
     form.reset();
   };
 
