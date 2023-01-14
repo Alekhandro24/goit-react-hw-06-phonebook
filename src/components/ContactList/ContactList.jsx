@@ -1,10 +1,10 @@
-import PropTypes from 'prop-types';
 import { useSelector } from 'react-redux';
 import { getContacts, getNameFilter } from 'redux/selectors';
 import ContactListItem from 'components/ContactListItem/ContactListItem';
 import { ListItem } from 'components/ContactListItem/ContactListItem.styled';
 import { ContactListUl } from 'components/ContactList/ContactList.styled';
 import Notification from 'components/Notification/Notification';
+import PropTypes from 'prop-types';
 
 const getVisibleContacts = (contacts, nameFilter) => {
   const normalizedFilter = nameFilter.toLowerCase();
@@ -26,7 +26,7 @@ const ContactList = () => {
     <div>
       <ContactListUl>
         {shownContacts.map((contact, id) => (
-          <ListItem key={id}>
+          <ListItem key={contact.id}>
             <ContactListItem contact={contact} />
           </ListItem>
         ))}
