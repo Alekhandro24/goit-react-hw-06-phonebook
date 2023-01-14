@@ -20,7 +20,6 @@ const Filter = () => {
       <label>Find contacts by Name </label>
       <FilterName
         type="text"
-        name="filter"
         placeholder="Enter filter"
         onChange={handleChange}
       />
